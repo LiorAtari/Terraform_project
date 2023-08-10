@@ -13,8 +13,8 @@ Then, open a terminal in the terraform directory and run the following command:
     
 ```
 terraform init  
-terraform plan  
-terraform apply
+terraform plan -out <name for the plan>  
+terraform apply <name of the plan created>
 ```
 
 ![architecture](map.png)
