@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Information</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 40px;
+            max-width: 400px;
+            margin: 0 auto;
+            border-radius: 3px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 0.5px solid #ccc;
+            border-radius: 0.5px;
+        }
+
+        input[type="button"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+        
+        .scale-img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Information</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age"><br><br>
+        
+        <label for="time">Time:</label>
+        <input type="text" id="time" name="time"><br><br>
+        
+        <input type="button" value="Submit" onclick="submitForm()">
+    </form>
+    
+    <!-- ... your existing code ... -->
+
+    <script>
+        function submitForm() {
+            var name = document.getElementById("name").value;
+            var age_value = document.getElementById("age").value;
+            var time = document.getElementById("time").value;
+
+            // Create a JSON object with the form data
+            var data = {
+                "name": name,
+                "age_value": age_value,
+                "time": time
+            };
+
+            // Send a POST request to the Flask app with the form data
+            fetch('/data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the response if necessary
+                alert(data.database_status);
+            })
+            .catch(error => {
+                // Handle any errors that occur during the POST request
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
