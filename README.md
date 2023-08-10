@@ -1,4 +1,4 @@
-### Terraform Exercise solution  
+### Terraform project
 
 
 ### Installation  
