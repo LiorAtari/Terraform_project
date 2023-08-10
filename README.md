@@ -5,7 +5,7 @@
 To install the infrastructure, run the following commands in a terminal:  
     
 ```
-git clone https://gitlab.com/sela-1090/students/lioratari/terraform.git  
+git clone https://github.com/LiorAtari/Terraform_project.git
     
 cd terraform-infrastructure  
 ```
