@@ -252,7 +252,7 @@ resource "azurerm_virtual_machine_extension" "web_user_data_script" {
 
   settings = <<SETTINGS
   {
-    "commandToExecute": "git clone https://github.com/LiorAtari/Terraform_project.git && bash /var/lib/waagent/custom-script/download/0/Terraform_project/infrastructure/scripts/web-user-data.sh"
+    "commandToExecute": "git clone https://github.com/LiorAtari/Terraform_project.git && bash /var/lib/waagent/custom-script/download/0/Terraform_project/infrastructure/scripts/web-app-install.sh"
   }
   SETTINGS
   depends_on = [
@@ -304,7 +304,7 @@ resource "azurerm_virtual_machine_extension" "web2_user_data_script" {
 
   settings = <<SETTINGS
   {
-    "commandToExecute": "git clone https://github.com/LiorAtari/Terraform_project.git && bash /var/lib/waagent/custom-script/download/0/Terraform_project/infrastructure/scripts/web-user-data.sh"
+    "commandToExecute": "git clone https://github.com/LiorAtari/Terraform_project.git && bash /var/lib/waagent/custom-script/download/0/Terraform_project/infrastructure/scripts/web-app-install.sh"
   }
   SETTINGS
   depends_on = [
@@ -375,7 +375,7 @@ resource "azurerm_virtual_machine_extension" "db_user_data_script" {
 
   settings = <<SETTINGS
   {
-    "commandToExecute": "git clone https://github.com/LiorAtari/Terraform_project.git && bash /var/lib/waagent/custom-script/download/0/Terraform_project//infrastructure/scripts/db-user-data.sh"
+    "commandToExecute": "git clone https://github.com/LiorAtari/Terraform_project.git && bash /var/lib/waagent/custom-script/download/0/Terraform_project//infrastructure/scripts/db-install.sh"
   }
   SETTINGS
   depends_on = [
